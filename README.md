@@ -4,6 +4,13 @@
 - **Account Number:** 20211021353
 - **Classname:** Algorithms and Data Structures
 
+# Screenshots
+
+![screenshot of a console](https://i.ibb.co/jhp2dct/image.png)
+![screenshot of a console](https://i.ibb.co/gV3hjVy/image.png)
+![](https://i.ibb.co/6BXc9Ff/image.png)
+
+
 # Requirements
 
 Una vez ejecutado su sistema mediante una consola de Linux, este deberá mostrar en la terminal la siguiente información. Todos los comandos funcionan, reciben y muestran información en la misma terminal.
