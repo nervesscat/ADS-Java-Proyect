@@ -25,6 +25,8 @@ public class Node<T> {
     }
 
     /**
+     * Obtiene el dato del nodo
+     * 
      * @return T data
      */
     public T getData() {
@@ -32,6 +34,8 @@ public class Node<T> {
     }
 
     /**
+     * Obtiene el siguiente nodo
+     * 
      * @return Node<T> next
      */
     public Node<T> getNext() {
@@ -39,6 +43,8 @@ public class Node<T> {
     }
 
     /**
+     * Modifica el valor del nodo
+     * 
      * @param data T
      */
     public void setData(T data) {
@@ -46,6 +52,8 @@ public class Node<T> {
     }
 
     /**
+     * Cambia el nodo siguiente
+     * 
      * @param next Node<T>
      */
     public void setNext(Node<T> next) {

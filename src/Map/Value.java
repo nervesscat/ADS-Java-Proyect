@@ -2,7 +2,7 @@ package Map;
 
 public class Value {
     
-    private JSON<Value> json;
+    private JSON<String, Value> json;
     private String string;
     private double number;
     private Value[] array;
@@ -12,7 +12,7 @@ public class Value {
     private boolean isNumber = false;
     private boolean isArray = false;
 
-    public Value(JSON<Value> json) {
+    public Value(JSON<String, Value> json) {
         this.json = json;
         this.isJSON = true;
     }
@@ -46,7 +46,57 @@ public class Value {
         }
     }
     
-    public JSON<Value> getJSON() {
+    public JSON<String, Value> getJSON() {
         return this.json;
+    }
+
+    public String getString() {
+        return this.string;
+    }
+
+    public double getNumber() {
+        return this.number;
+    }
+
+    public Value[] getArray() {
+        return this.array;
+    }
+
+    public boolean isJSON() {
+        return this.isJSON;
+    }
+
+    public boolean isString() {
+        return this.isString;
+    }
+
+    public boolean isNumber() {
+        return this.isNumber;
+    }
+
+    public boolean isArray() {
+        return this.isArray;
+    }
+
+    public String toString() {
+        if (this.isJSON) {
+            return this.json.toString();
+        } else if (this.isString) {
+            return this.string;
+        } else if (this.isNumber) {
+            return Double.toString(this.number);
+        } else if (this.isArray) {
+            String string = "[";
+            for (int i = 0; i < this.array.length; i++) {
+                string += this.array[i].toString();
+                if (i < this.array.length - 1) {
+                    string += ", ";
+                }
+            }
+            string += "]";
+            return string;
+        } else {
+            return "Unknown";
+        }
     }
 }

@@ -29,9 +29,10 @@ public class LinkedList<T> implements Iterable<T> {
         this.head = new Node<T>(data);
     }
 
-
     /**
-     * @param data T
+     * Agreda datos a la lista enlazada
+     * 
+     * @param data Valor a agregar
      */
     public void add(T data) {
         if (this.head == null) {
@@ -47,12 +48,35 @@ public class LinkedList<T> implements Iterable<T> {
         size++;
     }
 
+    public void add(Node<T> node) {
+        if (this.head == null) {
+            this.head = node;
+            size++;
+            return;
+        }
+        Node<T> current = this.head;
+        while (current.getNext() != null) {
+            current = current.getNext();
+        }
+        current.setNext(node);
+        size++;
+    }
+
     /**
-     * @return boolean
+     * Verifica sí la lista esta vacia
+     * 
+     * @return Retorna si es verdadero o falso
      */
     public boolean isEmpty() {
         return this.head == null;
     }
+
+    /**
+     * Revisa si el valor dado existe
+     * 
+     * @param data Valor a buscar
+     * @return Retorna verdadero si una coincidencia es encontrada, de lo contrario, falso
+     */
 
     public boolean itExists(T data) {
         if (this.head == null) {
@@ -69,24 +93,9 @@ public class LinkedList<T> implements Iterable<T> {
     }
 
     /**
-     * @param data T
-     */
-    public void add(Node<T> node) {
-        if (this.head == null) {
-            this.head = node;
-            size++;
-            return;
-        }
-        Node<T> current = this.head;
-        while (current.getNext() != null) {
-            current = current.getNext();
-        }
-        current.setNext(node);
-        size++;
-    }
-
-    /**
-     * @return int size
+     * Revisa el tamaño de la lista
+     * 
+     * @return Retorna un int con el valor del tamaño del arreglo
      */
     public int size() {
         return this.size;
@@ -97,7 +106,6 @@ public class LinkedList<T> implements Iterable<T> {
      * @see Iterator
      * @see LinkedList
      * 
-     * @since 2023-08-16
      */
     public Iterator<T> iterator() {
         return new Iterator<T>() {

@@ -4,40 +4,27 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
-public class JSON<T> {
-    
-    private Map<String, T> map;
+public class JSON<K, V> {
+    private Map<K, V> map;
 
     public JSON() {
-        map = new HashMap<>();
+        this.map = new HashMap<K, V>();
     }
 
-    public void add(String key, T value) {
+    public void add(K key, V value) {
         this.map.put(key, value);
     }
 
-    public T get(String key) {
+    public V get(K key) {
         return this.map.get(key);
     }
 
-    // * To String
+    public Set<K> getKeys() {
+        return this.map.keySet();
+    }
+
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("{");
-
-        // El set de keys es un conjunto de strings
-        Set<String> keys = this.map.keySet();
-        for (String key : keys) {
-            sb.append("\"");
-            sb.append(key);
-            sb.append("\"");
-            sb.append(":");
-            sb.append(this.map.get(key).toString());
-            sb.append(",");
-        }
-        sb.deleteCharAt(sb.length() - 1);
-        sb.append("}");
-        return sb.toString();
+        return this.map.toString();
     }
 }

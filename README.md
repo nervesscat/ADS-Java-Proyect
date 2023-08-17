@@ -91,8 +91,21 @@ El sistema debe poseer, cuatro archivos de memoria en donde se leen y se escribe
 Si se encuentran varios valores separados por comas, se agregan a la lista enlazada iterando el proceso
 
 ```java
-    String[] valuesArray = values.split(",");
-    for (String value : valuesArray) {
-        this.linkedList.add(Integer.parseInt(value));
+String[] pushItems = values.split(",");
+    for (String value : pushItems) {
+    linkedList.add(Integer.parseInt(value));
+    }
+```
+
+## Tree 
+
+- tree push <values>: agrega el valor en el árbol. El valor a agregar puede ser uno o múltiples elementos separados por comas. E.g. tree push 2,25,6,89
+
+Repitiendo el proceso que hicimos con el linkedlist, lo hacemos para el tree
+
+```java
+String[] pushItems = values.split(",");
+    for (String value : pushItems) {
+    map.add(Integer.parseInt(value));
     }
 ```
