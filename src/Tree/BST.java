@@ -3,7 +3,7 @@ package Tree;
 /**
  * @author meavilam@unah.hn
  * @version 1.0
- * @since 2023-08-16
+ * @since 2023-07-5
  */
 
 public class BST {
@@ -63,7 +63,7 @@ public class BST {
         return searchRecursive(root, value);
     }
 
-
+    
     private boolean searchRecursive(Node current, int value) {
         if (current == null) {
             return false;

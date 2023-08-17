@@ -9,7 +9,7 @@ import java.util.Iterator;
  * @see Node
  * 
  * @version 1.0
- * @since 2023-08-16
+ * @since 2023-06-10
  */
 
 public class LinkedList<T> implements Iterable<T> {

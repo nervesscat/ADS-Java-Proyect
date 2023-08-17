@@ -3,9 +3,14 @@ package Graph;
 import Map.JSON;
 
 /**
+ * Estructura de datos de tipo graph creada enteramente usando JSON.
+ * 
  * @author meavilam@unah.hn
  * @version 1.0
- * @since 2023-08-16
+ * @since 2023-07-28
+ * @see Edge
+ * @see Vertex
+ * @see JSON
  */
 
 public class Graph<T> {
@@ -33,7 +38,7 @@ public class Graph<T> {
     /**
      * Agrega una arista entre dos vertices
      * 
-     * @param from Arista inicial
+     * @param from Source o Arista inicial
      * @param to Endpoint o arista final
      * @param value Weight o peso de la arista
      */

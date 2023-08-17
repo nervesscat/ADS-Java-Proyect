@@ -6,7 +6,7 @@ package LinkedList;
  * @param <T> Generic type
  * @author meavilam@unah.hn
  * @version 1.0
- * @since 2023-08-16
+ * @since 2023-06-10
  * @see LinkedList
  */
 

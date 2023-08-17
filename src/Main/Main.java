@@ -71,7 +71,10 @@ public class Main {
 
             //* -------------- Tree -------------- *// 
 
-            if(key[0].equals("tree") && key.length == 1) { tree.printTree(); }
+            if(key[0].equals("tree") && key.length == 1) { 
+                System.out.println("\u001B[31mFunción todavia en desarrollo\u001B[0m"); 
+                tree.printTree(); 
+            }
 
             if(key[0].equals("tree") && key.length > 2 &&  key[1].equals("push")){
                 String[] pushItems = key[2].split(",");
@@ -107,15 +110,15 @@ public class Main {
                 continue;
             }
 
-            if(key[0].equals("graph") && key.length == 5 && key[1].equals("push") && key[2].equals("edge")){
-                graph.addEdge(key[3], key[4]);
+            if(key[0].equals("graph") && key.length == 6 && key[1].equals("push") && key[2].equals("edge")){
+                graph.addEdge(key[3], key[4], Double.parseDouble(key[5]));
                 continue;
             }
 
             if(key[0].equals("graph") && key.length == 2 && key[1].equals("help")){
                 System.out.println("\u001B[36mMenú de ayuda Graph\u001B[0m\n" +
                 "\u001B[35mgraph push vertex <name>\u001B[0m : agrega un vertice al arbol.\n" +
-                "\u001B[35mgraph push edge <from> <to>\u001B[0m : agrega una arista entre los vertices. Si el vertice origen no existe entonces lo crea. Si el vertice destino no existe entonces lo crea.\n" + 
+                "\u001B[35mgraph push edge <from> <to> <weight>\u001B[0m : agrega una arista entre los vertices. Si el vertice origen no existe entonces lo crea. Si el vertice destino no existe entonces lo crea.\n" + 
                 "\u001B[35mgraph\u001B[0m : imprime el contenido del grafo."
                 );
                 continue;

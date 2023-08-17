@@ -88,7 +88,7 @@ El sistema debe poseer, cuatro archivos de memoria en donde se leen y se escribe
 
 - linkedlist push <values>: agrega un valor a la lista enlazada. El valor a agregar puede ser uno o múltiples elementos separados por comas. Eg. linkedlist push 1,2,3,4,5,6,7
 
-Si se encuentran varios valores separados por comas, se agregan a la lista enlazada iterando el proceso
+Si se encuentran varios valores separados por comas, se agregan a la lista enlazada iterando el proceso, usando split e iterator entonces:
 
 ```java
 String[] pushItems = values.split(",");
@@ -101,7 +101,7 @@ String[] pushItems = values.split(",");
 
 - tree push <values>: agrega el valor en el árbol. El valor a agregar puede ser uno o múltiples elementos separados por comas. E.g. tree push 2,25,6,89
 
-Repitiendo el proceso que hicimos con el linkedlist, lo hacemos para el tree
+Repitiendo el proceso que hicimos con el linkedlist, lo hacemos para el tree:
 
 ```java
 String[] pushItems = values.split(",");
@@ -109,3 +109,25 @@ String[] pushItems = values.split(",");
     map.add(Integer.parseInt(value));
     }
 ```
+
+## Graph
+
+Usando JSON y otras clases creadas anteriormente.
+
+- graph push vertex : agrega un vértice al árbol.
+
+Facilmente vemos que cuando el usuario ingrese este método, agregamos el 4rto elemento del comando a addVertex de la siguiente forma:
+
+```java
+    graph.addVertex(key[3])
+```
+
+- graph push edge <valueOrigin> <valueDestination> <weight>: agrega una arista entre los vértices. Si el vértice origen no existe entonces lo crea. Si el vértice destino no existe entonces lo crea.
+
+Aca usamos el método addEdge que nos ofrece la clase graph de la siguiente forma:
+
+```java
+    graph.addEdge(key[3], key[4], Double.parseDouble(key[5]));
+```
+
+Donde key[3] el vertice inicial o source, key[4] el endpoint y key[5] que es el peso y tiene que ser convertido de String a double.
