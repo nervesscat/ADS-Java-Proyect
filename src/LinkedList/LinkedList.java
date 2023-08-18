@@ -199,7 +199,7 @@ public class LinkedList<T> implements Iterable<T> {
     }
 
     /**
-     * Ordena la lista de manera ascendente
+     * Ordena la lista de manera ascendente usando quick sort
      * 
      * @since 2023-08-18
      */
@@ -209,10 +209,123 @@ public class LinkedList<T> implements Iterable<T> {
     }
 
     /**
+     * Ordena la lista de manera descendente usando quick sort
+     * 
+     * @since 2023-08-18
+     */
+    public void quickSortDesc() {
+        quickSortRecursive(this.head, this.tail);
+        reverse();
+        return;
+    }
+
+    /**
+     * Ordena la lista de manera ascendente usando merge sort
+     * 
+     * @since 2023-08-18
+     */
+    public void mergeSortAsc() {
+        this.head = mergeSortRecursive(this.head);
+        return;
+    }
+
+    /**
+     * Ordena la lista de manera descendente usando merge sort
+     * 
+     * @since 2023-08-18
+     */
+    public void mergeSortDesc() {
+        this.head = mergeSortRecursive(this.head);
+        reverse();
+        return;
+    }
+
+    /**
+     * MergeSort de manera recursiva
+     * 
+     * @param head Nodo inicial
+     * @return Nodo inicial
+     * 
+     * @since 2023-08-18
+     */
+    private Node<T> mergeSortRecursive(Node<T> head) {
+        if (head == null || head.getNext() == null) {
+            return head;
+        }
+
+        Node<T> middle = getMiddle(head);
+        Node<T> nextOfMiddle = middle.getNext();
+
+        middle.setNext(null);
+
+        Node<T> left = mergeSortRecursive(head);
+        Node<T> right = mergeSortRecursive(nextOfMiddle);
+
+        Node<T> sortedList = sortedMerge(left, right);
+        return sortedList;
+    }
+
+    /**
+     * Retorna el nodo del medio de la lista
+     * 
+     * @param head Nodo inicial
+     * @return Nodo del medio
+     * 
+     * @since 2023-08-18
+     */
+    private Node<T> getMiddle(Node<T> head) {
+        if (head == null) {
+            return head;
+        }
+
+        Node<T> slow = head;
+        Node<T> fast = head;
+
+        while (fast.getNext() != null && fast.getNext().getNext() != null) {
+            slow = slow.getNext();
+            fast = fast.getNext().getNext();
+        }
+
+        return slow;
+    }
+
+    /**
+     * Merge de manera recursiva
+     * 
+     * @param a Nodo inicial
+     * @param b Nodo final
+     * @return Nodo inicial
+     * 
+     * @since 2023-08-18
+     */
+    private Node<T> sortedMerge(Node<T> a, Node<T> b) {
+        Node<T> result = null;
+
+        if (a == null) {
+            return b;
+        }
+
+        if (b == null) {
+            return a;
+        }
+
+        if (a.getData().hashCode() <= b.getData().hashCode()) {
+            result = a;
+            result.setNext(sortedMerge(a.getNext(), b));
+        } else {
+            result = b;
+            result.setNext(sortedMerge(a, b.getNext()));
+        }
+
+        return result;
+    }
+
+    /**
      * QuickSort de manera recursiva
      * 
      * @param low  Nodo inicial
      * @param high Nodo final
+     * 
      * @since 2023-08-18
      */
     private void quickSortRecursive(Node<T> low, Node<T> high) {
@@ -242,9 +355,6 @@ public class LinkedList<T> implements Iterable<T> {
 
         while(current != null && current != high) {
             if(current.getData().hashCode() < pivot.getData().hashCode() && current != null) {
-                if(current.getData().hashCode() == 8){
-                    System.out.println(i.getNext().getData() + " " + current.getData() + " " + pivot.getData());
-                }
                 i = i.getNext();
                 swap(i, current);
             }
@@ -255,6 +365,26 @@ public class LinkedList<T> implements Iterable<T> {
         swap(i, pivot);
         pivot = i;
         return pivot;
+    }
+
+    /**
+     * Invierte la lista enlazada
+     * 
+     * @since 2023-08-18
+     */
+    public void reverse() {
+        Node<T> current = this.head;
+        Node<T> prev = null;
+        Node<T> next = null;
+
+        while (current != null) {
+            next = current.getNext();
+            current.setNext(prev);
+            prev = current;
+            current = next;
+        }
+
+        this.head = prev;
     }
 
     /**

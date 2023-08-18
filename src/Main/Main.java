@@ -65,6 +65,24 @@ public class Main {
                 continue;
             }
 
+            if(key[0].equals("linkedlist") && key.length == 4 && key[1].equals("order") && key[2].equals("quicksort") && key[3].equals("desc")){
+                list.quickSortDesc();
+                System.out.println(list);
+                continue;
+            }
+
+            if(key[0].equals("linkedlist") && key.length == 4 && key[1].equals("order") && key[2].equals("mergesort") && key[3].equals("asc")){
+                list.mergeSortAsc();
+                System.out.println(list);
+                continue;
+            }
+
+            if(key[0].equals("linkedlist") && key.length == 4 && key[1].equals("order") && key[2].equals("mergesort") && key[3].equals("desc")){
+                list.mergeSortDesc();
+                System.out.println(list);
+                continue;
+            }
+
             if(key[0].equals("linkedlist") && key.length == 2 && key[1].equals("help")){
                 System.out.println("\u001B[36mMenú de ayuda LinkedList\u001B[0m\n" +
                 "\u001B[35mlinkedlist push <values>\u001B[0m : agrega un valor a la lista enlazada. El valor a agregar puede ser uno o m\u00FAltiples elementos separados por comas. Eg. linkedlist push 1,2,3,4,5,6\n" +
