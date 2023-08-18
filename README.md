@@ -4,11 +4,15 @@
 - **Account Number:** 20211021353
 - **Classname:** Algorithms and Data Structures
 
+# Aclaración
+
+El ADS-Java-Proyect.jar es para java 17 (openjdk 17) y el prueba.jar es para java 20
+
 # Screenshots
 
 ![screenshot of a console](https://i.ibb.co/jhp2dct/image.png)
 ![screenshot of a console](https://i.ibb.co/gV3hjVy/image.png)
-![](https://i.ibb.co/6BXc9Ff/image.png)
+![screenshot of a console](https://i.ibb.co/6BXc9Ff/image.png)
 
 
 # Requirements
@@ -103,6 +107,59 @@ String[] pushItems = values.split(",");
     linkedList.add(Integer.parseInt(value));
     }
 ```
+
+- linkedlist pop position <value>: elimina el valor de una posición de la lista.
+
+Para eliminar un valor de una posición de la lista, usamos el método remove de la clase LinkedList de la siguiente forma:
+
+```java
+linkedList.remove(Integer.parseInt(key[4]));
+```
+
+Donde key[4] es el valor de la posición a eliminar.
+
+- linkedlist pop value <value>: elimina el elemento que coincide con el valor entregado.
+
+Para eliminar un valor de la lista, usamos el método remove de la clase LinkedList de la siguiente forma:
+
+```java
+linkedList.remove(Integer.parseInt(key[3]));
+```
+
+Donde key[3] es el valor a eliminar.
+
+- linkedlist order quicksort asc: imprime la lista enlazada con valores ordenados ascendentemente, usando el algoritmo en mención.
+
+Para ordenar la lista enlazada, usamos el método quicksort de la clase LinkedList de la siguiente forma:
+
+```java
+System.out.println(linkedList.quickSort());
+```
+
+- linkedlist order quicksort desc: imprime la lista enlazada con valores ordenados descendentemente, usando el algoritmo en mención.
+
+```java
+System.out.println(linkedList.quickSortDesc());
+```
+
+La diferencia entre quickSort y quickSortDesc es que ambos usan el mismo método de ordenamiento (que es ascendente) pero quickSortDesc invierte la lista enlazada al final.
+
+### Quick Sort
+
+Tenemos que usar un algoritmo recursivo que se llama quicksort, el cual es un algoritmo de ordenamiento muy eficiente y de complejidad O(n log n). El algoritmo consiste en lo siguiente:
+
+1. Elegir un elemento de la lista de elementos a ordenar, al que llamaremos pivote. (El pivot es el último elemento de la lista)
+
+2. Resituar los demás elementos de la lista a cada lado del pivote, de manera que a un lado queden todos los menores que él, y al otro los mayores. Los elementos iguales al pivote pueden ser colocados tanto a su derecha como a su izquierda, dependiendo de la implementación deseada. En este momento, el pivote ocupa exactamente el lugar que le corresponderá en la lista ordenada.
+
+3. La lista queda separada en dos sublistas, una formada por los elementos a la izquierda del pivote, y otra por los elementos a su derecha.
+
+4. Repetir este proceso de forma recursiva para cada sublista mientras éstas contengan más de un elemento. Una vez terminado este proceso todos los elementos estarán ordenados.
+
+Este algoritmo es recursivo, por lo que se debe llamar a si mismo para ordenar las sublistas. El caso base de la recursión es cuando se tiene una lista de un solo elemento, en cuyo caso no se hace nada.
+
+Con esto el usuario podrá imprimir la lista enlazada ordenada ascendentemente.
+
 
 ## Tree 
 

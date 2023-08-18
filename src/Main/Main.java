@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 import Graph.Graph;
 import LinkedList.LinkedList;
-import Map.JSON;
 import Tree.BST;
 
 public class Main {
@@ -27,7 +26,7 @@ public class Main {
 
         System.out.println(welcomeMSG);
 
-        LinkedList<Integer> list = new LinkedList<Integer>(); 
+        LinkedList<Integer> list = new LinkedList<Integer>();
         BST tree = new BST();
         Graph<String> graph = new Graph<String>();
 
@@ -47,6 +46,22 @@ public class Main {
                 for(String value : pushItems){
                     list.add(Integer.parseInt(value));
                 }
+                continue;
+            }
+
+            if(key[0].equals("linkedlist") && key.length == 4 && key[1].equals("pop") && key[2].equals("position")){
+                list.remove(Integer.parseInt(key[3]));
+                continue;
+            }
+
+            if(key[0].equals("linkedlist") && key.length == 4 && key[1].equals("pop") && key[2].equals("value")){
+                list.removeValue(Integer.parseInt(key[3]));
+                continue;
+            }
+
+            if(key[0].equals("linkedlist") && key.length == 4 && key[1].equals("order") && key[2].equals("quicksort") && key[3].equals("asc")){
+                list.quickSortAsc();
+                System.out.println(list);
                 continue;
             }
 
