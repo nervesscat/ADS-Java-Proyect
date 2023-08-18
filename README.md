@@ -133,16 +133,34 @@ Donde key[3] es el valor a eliminar.
 Para ordenar la lista enlazada, usamos el método quicksort de la clase LinkedList de la siguiente forma:
 
 ```java
-System.out.println(linkedList.quickSort());
+list.quickSortAsc();
+System.out.println(list);
 ```
 
 - linkedlist order quicksort desc: imprime la lista enlazada con valores ordenados descendentemente, usando el algoritmo en mención.
 
 ```java
-System.out.println(linkedList.quickSortDesc());
+list.quickSortDesc();
+System.out.println(list);
 ```
 
 La diferencia entre quickSort y quickSortDesc es que ambos usan el mismo método de ordenamiento (que es ascendente) pero quickSortDesc invierte la lista enlazada al final.
+
+- linkedlist order mergesort asc: imprime la lista enlazada con valores ordenados ascendentemente, usando el algoritmo en mención.
+
+Para ordenar la lista enlazada, usamos el método mergeSort de la clase LinkedList de la siguiente forma:
+
+```java
+list.mergeSortAsc();
+System.out.println(list);
+```
+
+- linkedlist order mergesort desc: imprime la lista enlazada con valores ordenados descendentemente, usando el algoritmo en mención.
+
+```java
+list.mergeSortDesc();
+System.out.println(list);
+```
 
 ### Quick Sort
 
@@ -158,8 +176,19 @@ Tenemos que usar un algoritmo recursivo que se llama quicksort, el cual es un al
 
 Este algoritmo es recursivo, por lo que se debe llamar a si mismo para ordenar las sublistas. El caso base de la recursión es cuando se tiene una lista de un solo elemento, en cuyo caso no se hace nada.
 
-Con esto el usuario podrá imprimir la lista enlazada ordenada ascendentemente.
+Con esto el usuario podrá imprimir la lista enlazada ordenada ascendentemente o descendentemente.
 
+### Merge Sort
+
+El algoritmo de ordenamiento por mezcla o merge sort es un algoritmo de divide y vencerás. Fue inventado por John von Neumann en 1945. Consiste en dividir el problema en subproblemas de menor tamaño, de forma recursiva, hasta llegar a problemas de un tamaño suficientemente pequeño que pueden resolverse trivialmente. A partir de ahí, se recombina la solución de cada subproblema hasta obtener la solución al problema inicial.
+
+El algoritmo consta de dos procesos principales:
+
+1. Dividir: el proceso de dividir consiste en tomar la lista a ordenar de tamaño n y dividirlo en dos listas de tamaño n/2, cada una de estas listas se divide a su vez en dos listas más pequeñas y así sucesivamente, hasta llegar a tener n listas de tamaño 1.
+
+2. Mezclar: en este proceso se toman las listas de tamaño 1 y se mezclan entre ellas dos a dos, de forma que se creen listas de tamaño 2, las cuales se mezclan con otras dos listas de tamaño 2 para crear listas de tamaño 4 y así sucesivamente, hasta obtener una única lista ordenada.
+
+Con esto el usuario podrá imprimir la lista enlazada ordenada ascendentemente o descendentemente.
 
 ## Tree 
 
