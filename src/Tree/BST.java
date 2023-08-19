@@ -35,8 +35,13 @@ public class BST {
         root = insertRecursive(root, value);
     }
 
-    // ! Arreglar esto
-
+    
+    /**
+     * Inserta un nuevo nodo con el valor dado
+     * 
+     * @param current Nodo actual
+     * @param value Valor a insertar
+     */
     private Node insertRecursive(Node current, int value) {
         if (current == null) {
             return new Node(value);
@@ -44,10 +49,8 @@ public class BST {
 
         if (value < current.value) {
             current.left = insertRecursive(current.left, value);
-            System.out.println("El valor " + value + " se agregará a la izquierda y su padre es " + current.value);
         } else if (value > current.value) {
             current.right = insertRecursive(current.right, value);
-            System.out.println("El valor " + value + " se agregará a la derecha y su padre es " + current.value);
         }
 
         return current;
@@ -63,7 +66,13 @@ public class BST {
         return searchRecursive(root, value);
     }
 
-    
+    /**
+     * Busca a un nodo con un valor dado
+     * 
+     * @param current Nodo actual
+     * @param value Valor a buscar
+     * @return Verdadero si el valor es encontrado, falso de lo contrario
+     */
     private boolean searchRecursive(Node current, int value) {
         if (current == null) {
             return false;
@@ -78,20 +87,18 @@ public class BST {
         }
     }
 
-    public void printTree(Node node, String tab){
-        if (node == null) return;
-        System.out.println(tab + node.value);
 
-        if (node.left != null) {
-            printTree(node.left, tab + "\t");
+    public void printTree(Node node, String tab) {
+        if (node == null) {
+            return;
         }
-        
-        if (node.right != null) {
-            printTree(node.right, tab + "\t");
-        }
+
+        printTree(node.right, tab + "\t");
+        System.out.println(tab + node.value);
+        printTree(node.left, tab + "\t");
     }
 
-    public void printTree(Node node){
+    public void printTree(Node node) {
         printTree(node, "");
     }
 
