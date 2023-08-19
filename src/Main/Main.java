@@ -105,7 +105,6 @@ public class Main {
             //* -------------- Tree -------------- *// 
 
             if(key[0].equals("tree") && key.length == 1) { 
-                System.out.println("\u001B[31mFunción todavia en desarrollo\u001B[0m"); 
                 tree.printTree(); 
             }
 
@@ -116,6 +115,33 @@ public class Main {
                 }
                 continue;
             }
+
+            if(key[0].equals("tree") && key.length == 3 && key[1].equals("remove")){
+                tree.remove(Integer.parseInt(key[2]));
+                continue;
+            }
+
+            if(key[0].equals("tree") && key.length == 2 && key[1].equals("greatest")){
+                System.out.println(tree.findLargestValue());
+                continue;
+            }
+
+            if(key[0].equals("tree") && key.length == 2 && key[1].equals("smallest")){
+                System.out.println(tree.findSmallestValue());
+                continue;
+            }
+
+            if(key[0].equals("tree") && key.length == 2 && key[1].equals("height")){
+                System.out.println(tree.height());
+                continue;
+            }
+
+            if(key[0].equals("tree") && key.length == 2 && key[1].equals("external")){
+                System.out.println(tree.getExternalValues());
+                continue;
+            }
+
+
 
             if(key[0].equals("tree") && key.length == 2 && key[1].equals("help")){
                 System.out.println("\u001B[36mMenú de ayuda Tree\u001B[0m\n" +

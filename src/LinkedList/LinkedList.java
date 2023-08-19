@@ -435,7 +435,8 @@ public class LinkedList<T> implements Iterable<T> {
             sb.append(" -> ");
             current = current.getNext();
         }
-        sb.append("null");
+        sb.delete(sb.length() - 4, sb.length());
+
         return sb.toString();
     }
 }

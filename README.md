@@ -4,10 +4,6 @@
 - **Account Number:** 20211021353
 - **Classname:** Algorithms and Data Structures
 
-# Aclaración
-
-El ADS-Java-Proyect.jar es para java 17 (openjdk 17) y el prueba.jar es para java 20
-
 # Screenshots
 
 ![screenshot of a console](https://i.ibb.co/jhp2dct/image.png)
@@ -202,6 +198,71 @@ String[] pushItems = values.split(",");
     map.add(Integer.parseInt(value));
     }
 ```
+
+- tree remove <value>: elimina el valor del árbol sin eliminar los hijos de dicho valor eliminado. El árbol se debe volver a ordenar.
+
+Para eliminar un valor del árbol, usamos el método remove de la clase Tree de la siguiente forma:
+
+```java
+tree.remove(Integer.parseInt(key[2]));
+```
+
+La función removeRecursive es una función recursiva que recibe como parámetros el nodo actual del árbol y el valor que se desea eliminar. La función busca el nodo con el valor a eliminar y lo elimina del árbol.
+
+Primero, la función verifica si el nodo actual es null. Si es así, significa que el valor a eliminar no se encuentra en el árbol y la función devuelve null.
+
+Si el valor a eliminar es igual al valor del nodo actual, entonces se verifica si el nodo actual tiene hijos. Si el nodo actual no tiene hijos, entonces se devuelve null, lo que elimina el nodo del árbol.
+
+Si el nodo actual tiene un solo hijo, entonces se devuelve el hijo del nodo actual, lo que elimina el nodo del árbol.
+
+Si el nodo actual tiene dos hijos, entonces se busca el nodo más pequeño del subárbol derecho del nodo actual. Este nodo más pequeño se guarda en la variable smallestValue. Luego, se asigna el valor de smallestValue al nodo actual y se elimina smallestValue del subárbol derecho del nodo actual. Si smallestValue tiene hijos, entonces se agregan de nuevo al subárbol derecho del nodo actual.
+
+Si el valor a eliminar es menor que el valor del nodo actual, entonces se llama a la función removeRecursive con el hijo izquierdo del nodo actual como el nuevo nodo actual.
+
+Si el valor a eliminar es mayor que el valor del nodo actual, entonces se llama a la función removeRecursive con el hijo derecho del nodo actual como el nuevo nodo actual.
+
+Finalmente, la función devuelve el nodo actual, que puede ser el mismo nodo o un nuevo nodo si se eliminó el nodo original.
+
+- tree greatest: imprime el mayor valor guardado en el árbol.
+
+Usando el método findLargestValue de la clase Tree de la siguiente forma:
+
+```java
+System.out.println(tree.findLargestValue());
+```
+
+La función findLargestValue es una función recursiva que recibe como parámetro el nodo raíz del árbol y devuelve el valor más grande del árbol. Si el nodo actual no tiene un hijo derecho, entonces el valor del nodo actual es el valor más grande del árbol. Si el nodo actual tiene un hijo derecho, entonces se llama a la función findLargestValue recursivamente con el hijo derecho del nodo actual.
+
+- tree smallest: imprime el menor valor guardado en el árbol.
+
+Usando el método findSmallestValue de la clase Tree de la siguiente forma:
+
+```java
+System.out.println(tree.findSmallestValue());
+```
+
+La función findSmallestValue es una función recursiva que recibe como parámetro el nodo raíz del árbol y devuelve el valor más pequeño del árbol. Si el nodo actual no tiene un hijo izquierdo, entonces el valor del nodo actual es el valor más pequeño del árbol. Si el nodo actual tiene un hijo izquierdo, entonces se llama a la función findSmallestValue recursivamente con el hijo izquierdo del nodo actual.
+
+- tree height: imprime la altura del árbol.
+
+Usando el método height de la clase Tree de la siguiente forma:
+
+```java
+System.out.println(tree.height());
+```
+
+La función height es una función recursiva que recibe como parámetro el nodo raíz del árbol y devuelve la altura del árbol. Si el nodo actual es null, entonces la altura del árbol es 0. Si el nodo actual no es null, entonces se llama a la función height recursivamente con el hijo izquierdo y el hijo derecho del nodo actual. La altura del árbol es el máximo entre la altura del subárbol izquierdo y la altura del subárbol derecho, más 1.
+
+- tree external: imprime los nodos externos del árbol.
+
+Usando el método getExternalValues de la clase Tree de la siguiente forma:
+
+```java
+System.out.println(tree.getExternalValues());
+```
+
+La función getExternalValues es una función recursiva que recorre el árbol y agrega los valores de los nodos externos (nodos hoja) a una lista enlazada. Si el nodo actual es null, la función no hace nada. Si el nodo actual es un nodo hoja, se agrega su valor a la lista enlazada. Luego, se llama a la función getExternalValues recursivamente con el hijo izquierdo y el hijo derecho del nodo actual.
+
 
 ## Graph
 
