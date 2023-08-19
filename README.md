@@ -6,10 +6,22 @@
 
 # Screenshots
 
+- ## Welcome
 ![screenshot of a console](https://i.ibb.co/jhp2dct/image.png)
-![screenshot of a console](https://i.ibb.co/gV3hjVy/image.png)
-![screenshot of a console](https://i.ibb.co/6BXc9Ff/image.png)
 
+- ## Help Menu
+![screenshot of a console](https://i.ibb.co/gV3hjVy/image.png)
+
+- ## LinkedList
+![screenshot of a console](https://i.ibb.co/nCGYBnB/image.png)
+
+- ## Tree
+
+![screenshot of a console](https://i.ibb.co/whzfFTz/image.png)
+
+- ## Graph
+
+![screenshot of a console](https://i.ibb.co/2WpQf3G/image.png)
 
 # Requirements
 
