@@ -13,6 +13,7 @@ public class SaveCMD {
 
     /**
      * Guarda un string en un archivo
+     * @since 2023-07-28
      * @param content String a guardar
      */
     public static void save(String content) {
@@ -28,6 +29,8 @@ public class SaveCMD {
 
     /**
      * Carga un string de un archivo y lo imprime
+     * 
+     * @since 2023-07-28
      */
     public static void printHistory() {
         try {

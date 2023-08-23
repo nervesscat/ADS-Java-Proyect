@@ -20,6 +20,7 @@ public class Serializador {
      * Guarda un string en un archivo
      * @param content String a guardar
      * @param fileName Nombre del archivo
+     * @since 2023-08-21
      */
     public static void save(String content, String fileName) {
         try {
@@ -36,6 +37,7 @@ public class Serializador {
      * Carga un string de un archivo
      * 
      * @param fileName Nombre del archivo
+     * @since 2023-08-21
      * @return String con el contenido del archivo
      */
     public static String load(String fileName) {
@@ -53,6 +55,11 @@ public class Serializador {
         return content;
     }
 
+    /**
+     * Deserializa un archivo Tree.MEAM y lo inserta en un arbol
+     * @since 2023-08-21
+     * @param tree
+     */
     public static void treeInsert(BST tree){
         String content = load("Tree.MEAM");
         if (content.length() == 0) {
@@ -65,6 +72,11 @@ public class Serializador {
         }
     }
 
+    /**
+     * Deserializa un archivo LinkedList.MEAM y lo inserta en una lista
+     * @since 2023-08-21
+     * @param list
+     */
     public static void linkedListInsert(LinkedList<Integer> list){
         String content = load("LinkedList.MEAM");
         content = content.replaceAll("\\s", "");
@@ -79,6 +91,11 @@ public class Serializador {
         }
     }
 
+    /**
+     * Deserializa un archivo Graph.MEAM y lo inserta en un grafo
+     * @since 2023-08-21
+     * @param graph
+     */
     public static void graphInsert(Graph<String> graph){
         String content = load("Graph.MEAM");
         content = content.substring(1, content.length() - 2);
