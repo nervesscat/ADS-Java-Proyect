@@ -5,6 +5,7 @@ import java.util.Scanner;
 import Graph.Graph;
 import LinkedList.LinkedList;
 import Tree.BST;
+import Misc.*;
 
 public class Main {
     public static void main(String[] args){
@@ -30,11 +31,16 @@ public class Main {
         BST tree = new BST();
         Graph<String> graph = new Graph<String>();
 
+        Serializador.treeInsert(tree);
+        Serializador.linkedListInsert(list);
+        Serializador.graphInsert(graph);
+
         Scanner sc = new Scanner(System.in);
 
         while(true){
             System.out.print("> ");
             String cmd = sc.nextLine();
+            SaveCMD.save(cmd);
             
             String[] key = cmd.split(" ");
 
@@ -195,6 +201,8 @@ public class Main {
 
             if(key[0].equals("author")){ System.out.println("\u001B[33mNombre: Enrique Madrid\nCorreo: meavilam@unah.hn\n# de Cuenta: 20211021353\nPAC: II PAC\nAsignatura: Algoritmos y Estructura de Datos\nDocente: Ing. JOSE MANUEL INESTROZA MURILLO\u001B[0m"); }
 
+            if(key[0].equals("history")){ SaveCMD.printHistory(); }
+
             if(key[0].equals("help")){
                 System.out.println("\u001B[36mMenú de ayuda general\u001B[0m\n" +
                 "\u001B[35mexit\u001B[0m : permite finalizar el programa.\n" +
@@ -208,9 +216,14 @@ public class Main {
                 );
             }
             
-            if(key[0].equals("exit")){ break; }
-        }
+            if(key[0].equals("exit")){
+                Serializador.save(list.toString(), "LinkedList.MEAM");
+                Serializador.save(tree.toString(), "Tree.MEAM");
+                Serializador.save(graph.toString(), "Graph.MEAM");
+                sc.close();
+                System.exit(0);
+            }
 
-        sc.close();
+        }
     }
 }

@@ -4,12 +4,13 @@ import LinkedList.LinkedList;
 
 /**
  * @author meavilam@unah.hn
- * @version 1.1
+ * @version 1.2
  * @since 2023-07-5
  */
 
 public class BST {
     private Node root;
+    private String content;
 
     private class Node {
         private int value;
@@ -25,6 +26,7 @@ public class BST {
 
     public BST() {
         root = null;
+        content = "";
     }
 
     /**
@@ -34,6 +36,7 @@ public class BST {
      */
 
     public void insert(int value) {
+        content += value + ",";
         root = insertRecursive(root, value);
     }
 
@@ -135,6 +138,7 @@ public class BST {
      * @since 2023-8-18
      */
     public void remove(int value) {
+        content = content.replace(value + ",", "");
         root = removeRecursive(root, value);
     }
 
@@ -270,6 +274,14 @@ public class BST {
             return 0;
         }
         return 1 + Math.max(height(node.left), height(node.right));
+    }
+
+    /**
+     * ToString del arbol
+     * @since 2023-8-21
+     */
+    public String toString() {
+        return content;
     }
 }
 

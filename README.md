@@ -23,6 +23,14 @@
 
 ![screenshot of a console](https://i.ibb.co/2WpQf3G/image.png)
 
+- ## Persistencia
+
+![screenshot of a console](https://i.ibb.co/8zQpwhg/image.png)
+
+- ## History
+
+![screenshot of a console](https://i.ibb.co/3z39BS7/image-1.png)
+
 # Requirements
 
 Una vez ejecutado su sistema mediante una consola de Linux, este deberá mostrar en la terminal la siguiente información. Todos los comandos funcionan, reciben y muestran información en la misma terminal.
@@ -297,3 +305,33 @@ Aca usamos el método addEdge que nos ofrece la clase graph de la siguiente form
 ```
 
 Donde key[3] el vertice inicial o source, key[4] el endpoint y key[5] que es el peso y tiene que ser convertido de String a double.
+
+## Persistencia
+
+### History
+
+Para guardar el historial de comandos, usamos el método save de la clase SaveCMD de la siguiente forma:
+
+```java
+    SaveCMD.save(command);
+```
+
+Este método recibe como parámetro el comando que se ejecutó y lo guarda en un archivo llamado History.MEAM.
+
+Para leer el historial de comandos, usamos el método printHistory de la clase SaveCMD de la siguiente forma:
+
+```java
+    SaveCMD.printHistory();
+```
+
+Este método lee el archivo History.MEAM y lo imprime en la consola.
+
+### Serializador
+
+Antes de empezar con la persistencia del LinkedList, Tree y Graph, creamos una clase llamada Serializador que nos ayudará a serializar y deserializar los objetos que queremos guardar en archivos.
+
+Esta clase tendra dos tipos de métodos, uno para serializar y otro para deserializar.
+
+Considerando que cada tipo de dato tiene su propia forma de serializar y deserializar, creamos un método para cada tipo de dato.
+
+Entonces, pensando a detalle en como funcionará esto, podemos verlo de que al ejecutarse el programa este deserializará los archivos que se encuentran en la carpeta root y los guardará en las variables globales de LinkedList, Tree y Graph. Y cuando el usuario cierre el programa, se serializarán los objetos de LinkedList, Tree y Graph y se guardarán en archivos.

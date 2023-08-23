@@ -1,0 +1,116 @@
+help
+author
+history
+graph add vertex A B
+graph help
+graph push vertex A
+graph push vertex B
+graph push edge A B 3
+graph push edge A C 3
+graph
+linkedlist help
+linkedlist push 1,3,6,8,3,2,5
+linkedlist
+tree help
+tree push 7,5,42,67,1,2,4
+tree
+exit
+tree
+history
+tree push 7,5,42,67,1,2,4
+tree
+exit
+tree push 7,5,42,67,1,2,4
+exit
+tree push 7,5,42,67,1,2,4,6,23
+exit
+tree
+linkedlist
+linkedlist push 1,3,6,8,3,2,5
+linkedlist
+exit
+linkedlist
+tree
+tree
+tree push 3,5,88,53,12,7,6
+tree
+exit
+tree
+linkedlist
+tree push 2
+tree
+exit
+tree
+tree push 2,3,5,88,53,12,7
+tree
+tree
+tree
+tree remove 88
+tree
+exit
+tree
+linkedlist
+linkedlist push 9
+linkedlist
+exit
+linkedlist
+graph
+graph add edge A B 4
+graph help
+graph push edge A B 4
+graoh
+graph
+exit
+exit
+graph
+graph push vertex A
+graph
+graph push vertex B
+graph push edge A B 2
+graph push edge B A 1
+graph push edge C A 4
+graph
+graph push edge A C 2
+graph
+graph
+edge
+edge
+edge
+edge
+graph
+graph
+graph push edge JA D 2.6
+graph
+exit
+graph
+graph push edge C B 3
+graph
+graph push edge C B 2
+graph
+exit
+graph
+linkedlist
+tree
+tree push 1
+tree
+tree 3
+tree push 3
+tree
+tree push 1
+tree
+tree push 4
+tree
+exit
+tree
+linkedlist
+graph
+linkedlist
+linkedlist sort order quicksort asc
+linkedlist order quicksort asc
+linkedlist pop 3
+linkedlist pop value 3
+linkedlist
+linkedlist pop position 4
+linkedlist
+exit
+linkedlist
