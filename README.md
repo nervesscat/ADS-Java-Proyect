@@ -25,6 +25,8 @@
 
 - ## Persistencia
 
+Cada uno de los tipos de datos
+
 ![screenshot of a console](https://i.ibb.co/8zQpwhg/image.png)
 
 - ## History
